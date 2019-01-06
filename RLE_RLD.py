@@ -9,11 +9,11 @@ def rle_encoder(txt):
         if x == c:
             i += 1
         else:
-            res.append(f'{c}{i}')
+            res.append((c,i))
             i = 1
             c = x
-    res.append(f'{c}{i}')
-    return ''.join(res)
+    res.append((c,i))
+    return res
 
 def rle_decoder(inp):
     res = []
@@ -43,4 +43,4 @@ if __name__ == "__main__":
     if args[1]=='-d':
         print(rle_decoder(dat))
     else:
-print(rle_encoder(dat))
+        print(rle_encoder(dat))
