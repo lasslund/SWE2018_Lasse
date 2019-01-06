@@ -6,7 +6,7 @@ file_list = ["./examples/test_string.txt"]
 # "./pdf/CV_eng_2015.pdf", "./pdf/PID3286025.pdf"]
 
 # List of applications to test.
-apps_under_test = ["python rle.py -e".replace(" ","&")
+apps_under_test = ["python RLE_RLD.py -e".replace(" ","&")
                 #"/Applications/Adobe Acrobat DC/Adobe Acrobat.app/Contents/MacOS/AdobeAcrobat",
                    #"/Applications/PDFpen 6.app/Contents/MacOS/PDFpen 6",
                    #"/Applications/Preview.app/Contents/MacOS/Preview",
