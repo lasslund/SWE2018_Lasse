@@ -21,11 +21,15 @@ def test_advanced_encoder():
     assert rle_encoder('zzzzzzzziiiii') == [('z', 8), ('i', 5)]
     assert rle_encoder('ttttttttttt') == [('t', 11)]
 
-
+"""
+Testing the decoder
+"""
 #  Tests for rle_decoder
 
 def test_simple_decoder():
     assert rle_decoder('k3b3') == 'kkkbbb'
+    assert rle_decoder('a11b9') == 'aaaaaaaaaaabbbbbbbbb'
+    assert rle_decoder('c1d12') == 'cdddddddddddd'
 
 #def test_invariant():
 #    for x in [
