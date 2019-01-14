@@ -7,7 +7,7 @@ file_list = ["./test_string.txt"]
 # List of applications to test.
 apps_under_test = ["python RLE_RLD.py -e".replace(" ","&")]
 
-number_of_runs = 13
+number_of_runs = 30
 
 def test():
     print("start test")

@@ -1,7 +1,7 @@
 from RLE_RLD import rle_encoder,rle_decoder
-#import sys
-#from hypothesis import given
-#from hypothesis.strategies import text
+import sys
+from hypothesis import given
+from hypothesis.strategies import text
 #import afl
 
 #afl.init()
@@ -31,18 +31,16 @@ def test_simple_decoder():
     assert rle_decoder('a11b9') == 'aaaaaaaaaaabbbbbbbbb'
     assert rle_decoder('c1d12') == 'cdddddddddddd'
 
-#def test_invariant():
-#    for x in [
-#        'adfdgdfgfdsg',
-#        'asdsassasfgsdfhgjhgfdsdfghjhgfd']:
-#        assert rle_decoder(rle_encoder(x)) == x
+@given(text())
+def test_invariant(abcdefghijklmn):
+    assert rle_decoder(rle_encoder('abcdefghijklmn')) == 'abcdefghijklmn'
 
-#@given(text())
+
 #def test_hypo(x):
 #    print(x)
 #    assert rle_decoder(rle_encoder(x)) == x
 
-#if __name__ == '__main__':
+if __name__ == '__main__':
     # run 'py-afl-fuzz -o ./pdf/ -i ./examples/ -- (which python) test_rle.py'
     # from commandline to use afl to fuzz the encoder.
-#    print(rle_encoder(sys.stdin.read()))
+    print(rle_encoder(sys.stdin.read()))
